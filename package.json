@@ -1,0 +1,18 @@
+{
+  "name": "night-arduino-syntax",
+  "theme": "syntax",
+  "version": "0.0.0",
+  "description": "Night syntax for Arduino delevoper.",
+  "keywords": [
+    "arduino",
+    "dark syntax",
+    "night syntax",
+    "syntax",
+    "theme"
+  ],
+  "repository": "https://github.com/deakbannok/night-arduino-syntax",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.52.0 <2.0.0"
+  }
+}

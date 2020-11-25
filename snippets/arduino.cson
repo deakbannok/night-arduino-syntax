@@ -1,0 +1,327 @@
+'.source.cpp':
+  '[Utilities] Store data in flash (program) memory instead of SRAM':
+    'prefix': 'PROGMEM'
+    'body': 'PROGMEM$1'
+  '[Utilities] Returns (size_t) number of bytes in a variable type':
+    'prefix': 'sizeof'
+    'body': 'sizeof()$1'
+
+  '[Analog I/O] Read':
+    'prefix': 'analogRead'
+    'body': 'analogRead(${1:pin});$2'
+  '[Analog I/O] Write':
+    'prefix': 'analogWrite'
+    'body': 'analogWrite(${1:pin}, ${2:value});$3'
+  '[Analog I/O] Configures the reference voltage used for analog input':
+    'prefix': 'analogReference'
+    'body': 'analogReference(${1:type});$2'
+
+  '[Digital I/O] Read':
+    'prefix': 'digitalRead'
+    'body': 'digitalRead(${1:pin});$2'
+  '[Digital I/O] Write':
+    'prefix': 'digitalWrite'
+    'body': 'digitalWrite(${1:pin}, ${2:value});$3'
+  '[Digital I/O] Pin Mode':
+    'prefix': 'pinMode'
+    'body': 'pinMode(${1:pin}, ${2:mode});$3'
+
+  '[Advanced I/O] Stops the generation of a square wave triggered by tone()':
+    'prefix': 'noTone'
+    'body': 'noTone(${1:pin});$2'
+  '[Advanced I/O] Reads a pulse (either HIGH or LOW) on a pin':
+    'prefix': 'pulseIn'
+    'body': 'pulseIn(${1:pin}, ${2:value}, ${3:timeout});$4'
+  '[Advanced I/O] Alternative to pulseIn() which is better at handling long pulse and interrupt':
+    'prefix': 'pulseInLong'
+    'body': 'pulseInLong(${1:pin}, ${2:value}, ${3:timeout});$4'
+  '[Advanced I/O] Shifts in a byte of data one bit':
+    'prefix': 'shiftIn'
+    'body': 'shiftIn(${1:dataPin}, ${2:clockPin}, ${3:bitOrder});$4'
+  '[Advanced I/O] Shifts out a byte of data one bit':
+    'prefix': 'shiftOut'
+    'body': 'shiftout(${1:dataPin}, ${2:clockPin}, ${3:bitOrder}, ${4:value});$5'
+  '[Advanced I/O] Generates a square wave of the specified frequency (and 50% duty cycle) on a pin':
+    'prefix': 'tone'
+    'body': 'tone(${1:pin}, ${2:frequency}, ${3:duration});$4'
+
+  '[Zero, Due & MKR Family] Read extension of the Analog API':
+    'prefix': 'analogReadResolution'
+    'body': 'analogReadResolution(${1:bits});$2'
+  '[Zero, Due & MKR Family] Write extension of the Analog API':
+    'prefix': 'analogWriteResolution'
+    'body': 'analogWriteResolution(${1:bits});$2'
+
+  '[Time] Pauses the program in milliseconds (ms)':
+    'prefix': 'delay'
+    'body': 'delay(${1:ms});$2'
+  '[Time] Pauses the program in microseconds (us)':
+    'prefix': 'delayMicroseconds'
+    'body': 'delayMicroseconds(${1:us});$2'
+  '[Time] Returns the number of microseconds':
+      'prefix': 'micros'
+      'body': 'micros()$1'
+  '[Time] Returns the number of milliseconds':
+      'prefix': 'millis'
+      'body': 'millis()$1'
+
+  '[Random Numbers] Return generated pseudo-random numbers':
+    'prefix': 'random'
+    'body': 'random(${1:min}, ${2:max});$3'
+  '[Random Numbers] Initializes the pseudo-random number generator':
+    'prefix': 'randomSeed'
+    'body': 'randomSeed(${1:seed});$2'
+
+  '[Bits and Bytes] Return the value of the bit':
+    'prefix': 'bit'
+    'body': 'bit(${1:n});$2'
+  '[Bits and Bytes] Return (x) the numeric variable after the bit at position (n) is cleared':
+    'prefix': 'bitClear'
+    'body': 'bitClear(${1:x}, ${2:n});$3'
+  '[Bits and Bytes] Return a bit of a number':
+    'prefix': 'bitRead'
+    'body': 'bitRead(${1:x}, ${2:n});$3'
+  '[Bits and Bytes] Sets (a 1 to) a bit of a numeric variable':
+    'prefix': 'bitSet'
+    'body': 'bitSet(${1:x}, ${2:n});$3'
+  '[Bits and Bytes] Writes a bit of a numeric variable':
+    'prefix': 'bitWrite'
+    'body': 'bitWrite(${1:x}, ${2:n}, ${3:b});$4'
+  '[Bits and Bytes] Return (byte) the high-order (leftmost) of a word (or the second lowest of a larger data type)':
+    'prefix': 'highByte'
+    'body': 'highByte(${1:x});$2'
+  '[Bits and Bytes] Return (byte) the low-order (rightmost) of a variable (e.g. a word)':
+    'prefix': 'lowByte'
+    'body': 'lowByte(${1:x});$2'
+
+  '[External Interrupts] Digital pins with Interrupts':
+    'prefix': 'attachInterrupt'
+    'body': 'attachInterrupt(${1:interrupt}, ${2:function}, ${3:mode});$4'
+  '[External Interrupts] Turns off the given Digital pins with Interrupts':
+    'prefix': 'detachInterrupt'
+    'body': 'detachInterrupt(${1:interrupt});$2'
+
+  '[Math] Return the absolute value of a number':
+    'prefix': 'abs'
+    'body': 'abs(${1:x});$2'
+  '[Math] Return a number to be within a range (x)':
+    'prefix': 'constrain'
+    'body': 'constrain(${1:x}, ${2:a}, ${3:b});$4'
+  '[Math] Map':
+    'prefix': 'map'
+    'body': 'map(${1:value}, ${2:fromLow}, ${3:fromHigh}, ${4:toLow}, ${5:toHigh});$6'
+  '[Math] Return the maximum of two numbers':
+    'prefix': 'max'
+    'body': 'max(${1:x}, ${2:y});$3'
+  '[Math] Return the minimum of two numbers':
+    'prefix': 'min'
+    'body': 'min(${1:x}, ${2:y});$3'
+  '[Math] Return (double) the value of a number raised to a power':
+    'prefix': 'pow'
+    'body': 'pow(${1:(float)base}, ${2:(float)exponent});$3'
+  '[Math] Return (double) the square of a number: the number multiplied by itself':
+    'prefix': 'sq'
+    'body': 'sq(${1:x});$2'
+  '[Math] Return (double) the square root of a number':
+    'prefix': 'sqrt'
+    'body': 'sqrt(${1:x});$2'
+
+  '[Characters] Return (true) if is alpha':
+    'prefix': 'isAlpha'
+    'body': 'isAlpha(${1:char});$2'
+  '[Characters] Return (true) if is alphanumeric':
+    'prefix': 'isAlphaNumeric'
+    'body': 'isAlphaNumeric(${1:char});$2'
+  '[Characters] Return (true) if is Ascii':
+    'prefix': 'isAscii'
+    'body': 'isAscii(${1:char});$2'
+  '[Characters] Return (true) if is a control character':
+    'prefix': 'isControl'
+    'body': 'isControl(${1:char});$2'
+  '[Characters] Return (true) if is a number':
+    'prefix': 'isDigit'
+    'body': 'isDigit(${1:char});$2'
+  '[Characters] Return (true) if is printable with some content':
+    'prefix': 'isGraph'
+    'body': 'isGraph(${1:char});$2'
+  '[Characters] Return (true) if contains an hexadecimal digit':
+    'prefix': 'isHexadecimalDigit'
+    'body': 'isHexadecimalDigit(${1:char});$2'
+  '[Characters] Return (true) if contains a letter in lower case':
+    'prefix': 'isLowerCase'
+    'body': 'isLowerCase(${1:char});$2'
+  '[Characters] Return (true) if is printable (even a blank space)':
+    'prefix': 'isPrintable'
+    'body': 'isPrintable(${1:char});$2'
+  '[Characters] Return (true) if is punctuation':
+    'prefix': 'isPunct'
+    'body': 'isPunct(${1:char});$2'
+  '[Characters] Return (true) if is (\f, \n, \r, \t, \v)':
+    'prefix': 'isSpace'
+    'body': 'isSpace(${1:char});$2'
+  '[Characters] Return (true) if is upper case':
+    'prefix': 'isUpperCase'
+    'body': 'isUpperCase(${1:char});$2'
+  '[Characters] Return (true) if is a space or horizontal tab':
+    'prefix': 'isWhitespace'
+    'body': 'isWhitespace(${1:char});$2'
+
+  '[Data Types] Constructs an instance of the String class':
+    'prefix': 'String()'
+    'body': 'String(${1:val}, ${2:base});$3'
+  '[Data Types] Constant String':
+    'prefix': 'String'
+    'body': 'String$1'
+
+  '[String Object] Access a particular character of the String':
+    'prefix': 'charAt'
+    'body': 'charAt(${1:n})$2'
+  '[String Object] (Return 0 if equal, or -int/+int) Compares two Strings':
+    'prefix': 'compareTo'
+    'body': 'compareTo(${1:String})$2'
+  '[String Object] Return (bool). Appends the parameter to a String':
+    'prefix': 'concat'
+    'body': 'concat(${1:parameter})$2'
+  '[String Object] Converts the contents of a String as a C-style':
+    'prefix': 'c_str'
+    'body': 'c_str()$1'
+  '[String Object] Tests whether or not a String ends with the characters of another String':
+    'prefix': 'endsWith'
+    'body': 'endsWith(${1:String})$2'
+  '[String Object] Return (bool). Compares two Strings case-sensitive for equality':
+    'prefix': 'equals'
+    'body': 'equals(${1:String})$2'
+  '[String Object] Return (bool). Compares two Strings not case-sensitive for equality':
+    'prefix': 'equalsIgnoreCase'
+    'body': 'equalsIgnoreCase(${1:String})$2'
+  '[String Object] Copies the String’s characters to the supplied buffer (array of byte)':
+    'prefix': 'getBytes'
+    'body': 'getBytes(${1:buf}, ${2:len})$3'
+  '[String Object] (Return index of val, or -1 if not found). Searches from the beginning of the String within another String':
+    'prefix': 'indexOf'
+    'body': 'indexOf(${1:val}, ${2:from})$3'
+  '[String Object] (Return index of val, or -1 if not found). Searches from the end of the String within another String':
+    'prefix': 'lastIndexOf'
+    'body': 'lastIndexOf(${1:val}, ${2:from})$3'
+  '[String Object] Returns the length of the String, in characters':
+    'prefix': 'length'
+    'body': 'length()$1'
+  '[String Object] Modify in place a String removing chars from the provided index to the end of the String':
+    'prefix': 'remove'
+    'body': 'remove(${1:index}, ${2:count})$3'
+  '[String Object] Replace substrings of a String with a different substring':
+    'prefix': 'replace'
+    'body': 'replace(${1:substring1}, ${2:substring2})$3'
+  '[String Object] Allocate a buffer in memory for manipulating Strings':
+    'prefix': 'reserve'
+    'body': 'reserve(${1:size})$2'
+  '[String Object] Sets a character of the String. Has no effect on indices outside the existing length of the String':
+    'prefix': 'setCharAt'
+    'body': 'setCharAt(${1:index}, ${2:c})$3'
+  '[String Object] Return (bool). Tests whether or not a String starts with the characters of another String':
+    'prefix': 'startsWith'
+    'body': 'startsWith(${1:String})$2'
+  '[String Object] Return a substring of a String':
+    'prefix': 'substring'
+    'body': 'substring(${1:from}, ${2:to})$3'
+  '[String Object] Copies the String’s characters to the supplied buffer (array of char)':
+    'prefix': 'toCharArray'
+    'body': 'toCharArray(${1:buf}, ${2:len})$3'
+  '[String Object] Return (double) a valid String to a double':
+    'prefix': 'toDouble'
+    'body': 'toDouble()$1'
+  '[String Object] Return (integer) a valid String to an integer':
+    'prefix': 'toInt'
+    'body': 'toInt()$1'
+  '[String Object] Return (float) a valid String to a float':
+    'prefix': 'toFloat'
+    'body': 'toFloat()$1'
+  '[String Object] Modifies the String in place to a lower-case version':
+    'prefix': 'toLowerCase'
+    'body': 'toLowerCase()$1'
+  '[String Object] Modifies the String in place to an upper-case version':
+    'prefix': 'toUpperCase'
+    'body': 'toUpperCase()$1'
+  '[String Object] Remove any lead/trail whitespace the String in place':
+    'prefix': 'trim'
+    'body': 'trim()$1'
+
+  '[Serial] Available':
+    'prefix': 'Serial.available'
+    'body': 'if (Serial.available() > ${1:0}) {\n    $2\n}'
+  '[Serial] Available For Write':
+    'prefix': 'Serial.availableForWrite'
+    'body': 'Serial.availableForWrite();'
+  '[Serial] Begin':
+    'prefix': 'Serial.begin'
+    'body': 'Serial.begin(${1:9600});$2'
+  '[Serial] End':
+    'prefix': 'Serial.send'
+    'body': 'Serial.end();'
+  '[Serial] Find':
+    'prefix': 'Serial.find'
+    'body': 'Serial.find(${1:target});$2'
+  '[Serial] Find Until':
+    'prefix': 'Serial.findUntil'
+    'body': 'Serial.findUntil(${1:target}, ${2:terminal});$3'
+  '[Serial] Flush':
+    'prefix': 'Serial.flush'
+    'body': 'Serial.flush();'
+  '[Serial] Parse Float':
+    'prefix': 'Serial.parseFloat'
+    'body': 'Serial.parseFloat();'
+  '[Serial] Parse Int':
+    'prefix': 'Serial.parseInt'
+    'body': 'Serial.parseInt();'
+  '[Serial] Peek':
+    'prefix': 'Serial.peek'
+    'body': 'Serial.peek();'
+  '[Serial] Print':
+    'prefix': 'Serial.print'
+    'body': 'Serial.print(${1:val}, ${2:format});$3'
+  '[Serial] Print Line':
+    'prefix': 'Serial.println'
+    'body': 'Serial.println(${1:val}, ${2:format});$3'
+  '[Serial] Read':
+    'prefix': 'Serial.read'
+    'body': 'Serial.read();'
+  '[Serial] Read Bytes':
+    'prefix': 'Serial.readBytes'
+    'body': 'Serial.readBytes(${1:buffer}, ${2:length});$3'
+  '[Serial] Read Bytes Until':
+    'prefix': 'Serial.readBytesUntil'
+    'body': 'Serial.readBytesUntil(${1:character}, ${2:buffer}, ${3:length});$4'
+  '[Serial] Read String':
+    'prefix': 'Serial.readString'
+    'body': 'Serial.readString();'
+  '[Serial] Read String Until':
+    'prefix': 'Serial.readStringUntil'
+    'body': 'Serial.readStringUntil(${1:terminator});$2;'
+  '[Serial] Set Timeout':
+    'prefix': 'Serial.setTimeout'
+    'body': 'Serial.setTimeout(${1:time});$2'
+  '[Serial] Write':
+    'prefix': 'Serial.write'
+    'body': 'Serial.write(${1:data});$2'
+  '[Serial] Called when data is available. Use Serial.read() to capture this data':
+    'prefix': 'serialEvent'
+    'body': """
+      void serialEvent${1:SerialPort}() {
+        //statements
+      }
+    """
+
+  '[Sketch] Setup':
+    'prefix': 'setup'
+    'body': """
+      void setup() {
+        $1
+      }
+    """
+  '[Sketch] Loop':
+    'prefix': 'loop'
+    'body': """
+      void loop() {
+        $1
+      }
+    """

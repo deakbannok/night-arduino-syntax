@@ -1,0 +1,47 @@
+@import "colors";
+
+// This defines all syntax variables that syntax themes must implement when they
+// include a syntax-variables.less file.
+
+// General colors
+@syntax-text-color: @gray-very-light;
+@syntax-cursor-color: @cursor-color;
+@syntax-selection-color: lighten(@gray, 10%);
+@syntax-background-color: @dark-light;
+
+// Guide colors
+@syntax-wrap-guide-color: @dark-gray;
+@syntax-indent-guide-color: @gray;
+@syntax-invisible-character-color: @gray;
+
+// For find and replace markers
+@syntax-result-marker-color: @gray-light;
+@syntax-result-marker-color-selected: white;
+
+// Gutter colors
+@syntax-gutter-text-color: @gray-very-light;
+@syntax-gutter-text-color-selected: @syntax-gutter-text-color;
+@syntax-gutter-background-color: @dark-gray;
+@syntax-gutter-background-color-selected: @gray;
+
+// For git diff info. i.e. in the gutter
+@syntax-color-renamed: @blue;
+@syntax-color-added: @green;
+@syntax-color-modified: @orange;
+@syntax-color-removed: @red;
+
+// Custom
+@bracket-round: #FF0000;
+@bracket-curly: #EAEAEA;
+@bracket-square: #CCCCCC;
+@end-of-statement: #ADADAD;
+@directive: #B057FF;
+@constant-numeric: #FF8000;
+@constant-value: #FFB730;
+@cursor-color: #FFE600;
+@variable-type: @blue;
+@variable-function: #00CCFF;
+@variable-class-member: #FF9900;
+@variable-class: #00FFFC;
+@variable-cpp: #CCCCCC;
+@syntax-operator: #71C800;
